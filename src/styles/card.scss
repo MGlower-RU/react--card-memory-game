@@ -1,0 +1,34 @@
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  perspective: 50rem;
+  transform-style: preserve-3d;
+  transition: all .3s ease;
+
+  &.active,
+  &.picked {
+    transform: rotateY(180deg);
+  }
+
+  &.active {
+    pointer-events: none;
+  }
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card__front {
+  background-color: white;
+  border: 1.5rem solid;
+}
+
+.card__back {
+  transform: rotateY(-180deg);
+}

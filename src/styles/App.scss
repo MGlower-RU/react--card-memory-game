@@ -1,0 +1,17 @@
+.memory__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 104rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.cards-table__wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
