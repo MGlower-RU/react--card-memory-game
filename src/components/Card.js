@@ -11,6 +11,7 @@ export default function Card({name, img}) {
   } = useContext(CardMainContext)
 
   function revealCard(e) {
+    console.log('clicked')
     const card = e.target.closest('.card')
 
     if(!card.classList.contains('active')) {

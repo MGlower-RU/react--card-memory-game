@@ -4,7 +4,7 @@
   aspect-ratio: 3/4;
   perspective: 50rem;
   transform-style: preserve-3d;
-  transition: all .3s ease;
+  transition: transform .3s ease;
 
   &.active,
   &.picked {
