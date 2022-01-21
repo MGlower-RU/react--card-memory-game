@@ -8,6 +8,8 @@ export default function MainContext(props) {
   const [cardsToPlay, setCardsToPlay] = useState(3)
   const [pickedCard, setPickedCard] = useState(null)
   const [cardsRevealed, setCardsRevealed] = useState(1)
+  const [cardsGuessed, setCardsGuessed] = useState(0)
+  const [attemptsNumber, setAttemptsNumber] = useState(0)
   const cardTable = useRef(null)
 
   const duplicateArray = useMemo(() => {
@@ -44,6 +46,8 @@ export default function MainContext(props) {
       cardsToPlay, setCardsToPlay,
       pickedCard, setPickedCard,
       cardsRevealed, setCardsRevealed,
+      attemptsNumber, setAttemptsNumber,
+      cardsGuessed, setCardsGuessed,
       duplicateArray, cardTable
     }}>
       {props.children}

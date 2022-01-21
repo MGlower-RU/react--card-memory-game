@@ -7,11 +7,12 @@ export default function Card({name, img}) {
     pickedCard,
     setPickedCard,
     cardsRevealed,
-    setCardsRevealed
+    setCardsRevealed,
+    setAttemptsNumber,
+    setCardsGuessed
   } = useContext(CardMainContext)
 
   function revealCard(e) {
-    console.log('clicked')
     const card = e.target.closest('.card')
 
     if(!card.classList.contains('active')) {
@@ -19,14 +20,15 @@ export default function Card({name, img}) {
     }
 
     setCardsRevealed(val => val - 1)
-
     if(pickedCard) {
       if(cardsRevealed === 0) {
         setCardsRevealed(1)
         setPickedCard(null)
+        setAttemptsNumber(att => att + 1)
       }
 
       if(pickedCard === name) {
+        setCardsGuessed(num => num + 1)
         document.querySelectorAll(`.card[data-card-name=${name}]`).forEach((el) => {
           el.classList.add('picked')
         })

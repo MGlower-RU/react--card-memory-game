@@ -3,7 +3,10 @@ import { CardMainContext } from "../context/MainContext";
 import Card from "./Card";
 
 export default function CardsTable() {
-  const { duplicateArray, cardTable } = useContext(CardMainContext)
+  const {
+    duplicateArray,
+    cardTable
+  } = useContext(CardMainContext)
 
   return (
     <div className="cards-table__wrapper" ref={cardTable}>

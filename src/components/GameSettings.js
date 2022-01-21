@@ -46,7 +46,7 @@ export default function GameSettings() {
         <span>Number of pairs (min 3):</span>
         <input
           type="text"
-          placeholder={`0 - ${cardsData[theme].items.length}`}
+          placeholder={`3 - ${cardsData[theme].items.length}`}
           value={cardsToPlay}
           onChange={digitsCheck}
         />
