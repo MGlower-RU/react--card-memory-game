@@ -31,8 +31,19 @@
       color: rgba(255, 255, 255, 0.664);
     }
   }
+}
 
-  // input {
-  //   padding: .4rem .6rem;
-  // }
+.memory__reset-game {
+  height: 3rem;
+  margin-left: auto;
+  align-self: flex-end;
+  background-color: black;
+  padding: .5rem;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }

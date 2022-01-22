@@ -1,15 +1,16 @@
 import { useContext } from "react"
 import { CardMainContext } from "../context/MainContext"
 
+import Undo from '../images/undo_alt.svg'
+
 import '../styles/game-settings.scss'
 
 export default function GameSettings() {
   const {
-    theme,
-    setTheme,
+    theme, setTheme,
+    cardsToPlay, setCardsToPlay,
     cardsData,
-    cardsToPlay,
-    setCardsToPlay
+    resetGame
   } = useContext(CardMainContext)
 
   const digitsCheck = e => {
@@ -51,6 +52,12 @@ export default function GameSettings() {
           onChange={digitsCheck}
         />
       </div>
+      <button
+        className="memory__reset-game"
+        onClick={resetGame}
+      >
+        <img src={Undo} alt="" />
+      </button>
     </div>
   )
 }
