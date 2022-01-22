@@ -9,14 +9,15 @@ import './styles/App.scss';
 export default function App() {
   const {
     cardsToPlay,
-    cardsGuessed
+    cardsGuessed,
+    minCardsToPlay
   } = useContext(CardMainContext)
 
   return (
     <div className="memory__wrapper">
       <GameSettings />
       <CardsTable />
-      { cardsToPlay > 1 && cardsToPlay === cardsGuessed && <Results /> }
+      { ((cardsToPlay === '' || cardsToPlay === 0) ? minCardsToPlay === cardsGuessed : cardsToPlay === cardsGuessed) && <Results /> }
     </div>
   );
 }

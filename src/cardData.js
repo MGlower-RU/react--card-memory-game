@@ -1,14 +1,9 @@
+function randomColor() {
+  const o = Math.round, r = Math.random, s = 255;
+  return `rgb(${o(r()*s)}, ${o(r()*s)}, ${o(r()*s)})`
+}
+
 export const cardsData = {
-  'saiki-kusuo': {
-    backface: 'img',
-    items: [
-      {
-        id: 1,
-        name: 'saiki',
-        img: 'green'
-      }
-    ]
-  },
   'japan-food': {
     backface: 'img',
     items: [
@@ -63,5 +58,120 @@ export const cardsData = {
         img: 'aliceblue'
       },
     ]
-  }
+  },
+  'random-colors': {
+    backface: 'img',
+    items: [
+      {
+        id: 1,
+        name: 'first',
+        img: randomColor()
+      },
+      {
+        id: 2,
+        name: 'second',
+        img: randomColor()
+      },
+      {
+        id: 3,
+        name: 'third',
+        img: randomColor()
+      },
+      {
+        id: 4,
+        name: 'fourth',
+        img: randomColor()
+      },
+      {
+        id: 5,
+        name: 'fifth',
+        img: randomColor()
+      },
+      {
+        id: 6,
+        name: 'sixth',
+        img: randomColor()
+      },
+      {
+        id: 7,
+        name: 'seventh',
+        img: randomColor()
+      },
+      {
+        id: 8,
+        name: 'eighth',
+        img: randomColor()
+      },
+      {
+        id: 9,
+        name: 'nineth',
+        img: randomColor()
+      },
+      {
+        id: 10,
+        name: 'tenth',
+        img: randomColor()
+      },
+      {
+        id: 11,
+        name: 'tenth',
+        img: randomColor()
+      },
+      {
+        id: 12,
+        name: 'twelfth',
+        img: randomColor()
+      },
+      {
+        id: 13,
+        name: 'thirteenth',
+        img: randomColor()
+      },
+      {
+        id: 14,
+        name: 'fourteenth',
+        img: randomColor()
+      },
+      {
+        id: 15,
+        name: 'fiveteenth',
+        img: randomColor()
+      },
+      {
+        id: 16,
+        name: 'sixteenth',
+        img: randomColor()
+      },
+      {
+        id: 17,
+        name: 'seventeenth',
+        img: randomColor()
+      },
+      {
+        id: 18,
+        name: 'eighteenth',
+        img: randomColor()
+      },
+      {
+        id: 19,
+        name: 'nineteenth',
+        img: randomColor()
+      },
+      {
+        id: 20,
+        name: 'twentieth',
+        img: randomColor()
+      },
+    ]
+  },
+  'saiki-kusuo': {
+    backface: 'img',
+    items: [
+      {
+        id: 1,
+        name: 'saiki',
+        img: 'green'
+      }
+    ]
+  },
 }

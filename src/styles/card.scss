@@ -2,8 +2,8 @@
   position: relative;
   width: 100%;
   aspect-ratio: 3/4;
-  perspective: 50rem;
   transform-style: preserve-3d;
+  perspective: 50rem;
   transition: transform .3s ease;
 
   &.active,

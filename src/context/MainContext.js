@@ -4,8 +4,9 @@ import { cardsData } from '../cardData'
 export const CardMainContext = createContext();
 
 export default function MainContext(props) {
-  const [theme, setTheme] = useState('japan-food')
+  const [theme, setTheme] = useState(Object.keys(cardsData)[0])
   const [cardsToPlay, setCardsToPlay] = useState(3)
+  const [minCardsToPlay] = useState(3)
   const [pickedCard, setPickedCard] = useState(null)
   const [cardsRevealed, setCardsRevealed] = useState(1)
   const [cardsGuessed, setCardsGuessed] = useState(0)
@@ -20,7 +21,7 @@ export default function MainContext(props) {
     setCardsGuessed(0)
     setAttemptsNumber(0)
 
-    document.querySelectorAll(`.card.active`).forEach((el) => {
+    document.querySelectorAll(`.card`).forEach((el) => {
       el.classList.remove('picked', 'active')
     })
 
@@ -33,7 +34,7 @@ export default function MainContext(props) {
       [array[i], array[j]] = [array[j], array[i]];
     }
 
-    const sliced = (cardsToPlay !== '' && cardsToPlay > 2) ? array.slice(0, cardsToPlay) : array.slice(0, 3)
+    const sliced = (cardsToPlay !== '' && cardsToPlay > 0) ? array.slice(0, cardsToPlay) : array.slice(0, 3)
     const doubleSliced = sliced.concat(sliced)
 
     for (let i = doubleSliced.length - 1; i > 0; i--) {
@@ -45,11 +46,8 @@ export default function MainContext(props) {
 
   useEffect(() => {
     resetGame()
-    setDuplicateArray(shuffleArray(cardsData[theme].items))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme, cardsToPlay])
-
-  console.log(duplicateArray)
 
   return (
     <CardMainContext.Provider value={{
@@ -61,7 +59,8 @@ export default function MainContext(props) {
       attemptsNumber, setAttemptsNumber,
       cardsGuessed, setCardsGuessed,
       duplicateArray, cardTable,
-      resetGame
+      resetGame,
+      minCardsToPlay
     }}>
       {props.children}
     </CardMainContext.Provider>

@@ -54,7 +54,7 @@ export default function Card({name, img}) {
       <div
         className="card__back"
         style={{
-          backgroundColor: `${img}`
+          background: `${img}`
         }}
       ></div>
     </div>
