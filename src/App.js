@@ -16,7 +16,7 @@ export default function App() {
     <div className="memory__wrapper">
       <GameSettings />
       <CardsTable />
-      { cardsToPlay === cardsGuessed && <Results /> }
+      { cardsToPlay > 1 && cardsToPlay === cardsGuessed && <Results /> }
     </div>
   );
 }

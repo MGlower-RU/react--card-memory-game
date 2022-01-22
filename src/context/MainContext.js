@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createContext, useEffect, useRef, useState } from 'react';
 import { cardsData } from '../cardData'
 
 export const CardMainContext = createContext();
@@ -10,6 +10,7 @@ export default function MainContext(props) {
   const [cardsRevealed, setCardsRevealed] = useState(1)
   const [cardsGuessed, setCardsGuessed] = useState(0)
   const [attemptsNumber, setAttemptsNumber] = useState(0)
+  const [duplicateArray, setDuplicateArray] = useState([])
 
   const cardTable = useRef(null)
 
@@ -22,6 +23,8 @@ export default function MainContext(props) {
     document.querySelectorAll(`.card.active`).forEach((el) => {
       el.classList.remove('picked', 'active')
     })
+
+    setDuplicateArray(shuffleArray(cardsData[theme].items))
   }
 
   function shuffleArray(array) {
@@ -40,32 +43,13 @@ export default function MainContext(props) {
     return doubleSliced
   }
 
-  const duplicateArray = useMemo(() => {
-    const { items } = cardsData[theme]
-
-    for (let i = items.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random()*(i + 1));
-      [items[i], items[j]] = [items[j], items[i]];
-    }
-
-    const sliced = (cardsToPlay !== '' && cardsToPlay > 2) ? items.slice(0, cardsToPlay) : items.slice(0, 3)
-    const doubleSliced = sliced.concat(sliced)
-
-    for (let i = doubleSliced.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random()*(i + 1));
-      [doubleSliced[i], doubleSliced[j]] = [doubleSliced[j], doubleSliced[i]];
-    }
-    return doubleSliced
+  useEffect(() => {
+    resetGame()
+    setDuplicateArray(shuffleArray(cardsData[theme].items))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme, cardsToPlay])
 
-  useEffect(() => {
-    if(cardTable) {
-      document.querySelectorAll(`.card.active`).forEach((el) => {
-        el.classList.remove('active', 'picked')
-      })
-    }
-  }, [theme, cardsToPlay])
+  console.log(duplicateArray)
 
   return (
     <CardMainContext.Provider value={{

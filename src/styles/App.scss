@@ -22,12 +22,38 @@
   left: 0;
   top: 0;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   background-color: rgba(90, 55, 206, 0.918);
   z-index: 3;
   opacity: 0;
-  animation: overlayAppearing 3s ease-in-out forwards;
+  gap: 3rem;
+  animation: overlayAppearing .4s ease-in-out forwards;
+}
+
+.cards-table__finish__attempts {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  color: white;
+
+  span {
+    font-size: 1.4em;
+    font-weight: 700;
+    border-bottom: .2rem solid #000;
+  }
+}
+
+.cards-table__finish__reset {
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+  font-size: 1.4rem;
+  letter-spacing: .1em;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
 }
 
 @keyframes overlayAppearing {
