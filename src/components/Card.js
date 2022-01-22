@@ -51,12 +51,19 @@ export default function Card({name, img}) {
       data-card-name={name}
     >
       <div className="card__front"></div>
-      <div
-        className="card__back"
-        style={{
-          background: `${img}`
-        }}
-      ></div>
+      {
+        (img.indexOf('.png') > 0 || img.indexOf('.svg') > 0 || img.indexOf('.jpg') > 0) ?
+        <div className="card__back">
+          <img src={img} alt="" />
+        </div>
+        :
+        <div
+          className="card__back"
+          style={{
+            background: `${img}`
+          }}
+        ></div>
+      }
     </div>
   )
 }

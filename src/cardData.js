@@ -1,7 +1,13 @@
-function randomColor() {
-  const o = Math.round, r = Math.random, s = 255;
-  return `rgb(${o(r()*s)}, ${o(r()*s)}, ${o(r()*s)})`
-}
+import Sushi from './images/japanese_food/sushi.svg'
+import Bento from './images/japanese_food/bento.svg'
+import CakeMochi from './images/japanese_food/cake_mochi.svg'
+import Nori from './images/japanese_food/nori.svg'
+import Onigiri from './images/japanese_food/onigiri.svg'
+import Ramen from './images/japanese_food/ramen.svg'
+import Rice from './images/japanese_food/rice.svg'
+import Roll from './images/japanese_food/roll.svg'
+import Sashimi from './images/japanese_food/sashimi.svg'
+import Sataytakoyaki from './images/japanese_food/satay_takoyaki.svg'
 
 export const cardsData = {
   'japan-food': {
@@ -10,52 +16,52 @@ export const cardsData = {
       {
         id: 1,
         name: 'onigiri',
-        img: 'black'
+        img: Onigiri
       },
       {
         id: 2,
         name: 'ramen',
-        img: 'yellow'
+        img: Ramen
       },
       {
         id: 3,
-        name: 'okonomiyaki',
-        img: 'orange'
+        name: 'bento',
+        img: Bento
       },
       {
         id: 4,
-        name: 'teppanyaki',
-        img: 'burlywood'
+        name: 'cake-mochi',
+        img: CakeMochi
       },
       {
         id: 5,
-        name: 'sushi',
-        img: 'salmon'
+        name: 'nori',
+        img: Nori
       },
       {
         id: 6,
-        name: 'yakiniku',
-        img: 'pink'
+        name: 'rice',
+        img: Rice
       },
       {
         id: 7,
-        name: 'yakitori',
-        img: 'brown'
+        name: 'roll',
+        img: Roll
       },
       {
         id: 8,
-        name: 'sukiyaki',
-        img: 'palevioletred'
+        name: 'sataytakoyaki',
+        img: Sataytakoyaki
       },
       {
         id: 9,
-        name: 'fugu',
-        img: 'seashell'
+        name: 'sashimi',
+        img: Sashimi
       },
       {
         id: 10,
-        name: 'unagi',
-        img: 'aliceblue'
+        name: 'sushi',
+        img: Sushi
       },
     ]
   },
@@ -174,4 +180,9 @@ export const cardsData = {
       }
     ]
   },
+}
+
+function randomColor() {
+  const o = Math.round, r = Math.random, s = 255;
+  return `rgb(${o(r()*s)}, ${o(r()*s)}, ${o(r()*s)})`
 }
