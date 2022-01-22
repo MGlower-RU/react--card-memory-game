@@ -9,6 +9,18 @@ import Roll from './images/japanese_food/roll.svg'
 import Sashimi from './images/japanese_food/sashimi.svg'
 import Sataytakoyaki from './images/japanese_food/satay_takoyaki.svg'
 
+import Bandage from './images/medical/bandage.svg'
+import Clinic from './images/medical/clinic.svg'
+import Flusk from './images/medical/flusk.svg'
+import Heart from './images/medical/heart.svg'
+import Infuse from './images/medical/infuse.svg'
+import Injection from './images/medical/injection.svg'
+import Microscope from './images/medical/microscope.svg'
+import PcReport from './images/medical/pc_report.svg'
+import Pills from './images/medical/pills.svg'
+import Stethoscope from './images/medical/stethoscope.svg'
+import Tablets from './images/medical/tablets.svg'
+
 export const cardsData = {
   'japan-food': {
     backface: 'img',
@@ -62,6 +74,66 @@ export const cardsData = {
         id: 10,
         name: 'sushi',
         img: Sushi
+      },
+    ]
+  },
+  'medical': {
+    backface: 'img',
+    items: [
+      {
+        id: 1,
+        name: 'bandage',
+        img: Bandage
+      },
+      {
+        id: 2,
+        name: 'clinic',
+        img: Clinic
+      },
+      {
+        id: 3,
+        name: 'flusk',
+        img: Flusk
+      },
+      {
+        id: 4,
+        name: 'heart',
+        img: Heart
+      },
+      {
+        id: 5,
+        name: 'infuse',
+        img: Infuse
+      },
+      {
+        id: 6,
+        name: 'injection',
+        img: Injection
+      },
+      {
+        id: 7,
+        name: 'microscope',
+        img: Microscope
+      },
+      {
+        id: 8,
+        name: 'pc-report',
+        img: PcReport
+      },
+      {
+        id: 9,
+        name: 'pills',
+        img: Pills
+      },
+      {
+        id: 10,
+        name: 'Stethoscope',
+        img: Stethoscope
+      },
+      {
+        id: 11,
+        name: 'tablets',
+        img: Tablets
       },
     ]
   },
