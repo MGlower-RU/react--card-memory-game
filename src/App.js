@@ -10,7 +10,7 @@ export default function App() {
   const {
     cardsToPlay,
     cardsGuessed,
-    minCardsToPlay
+    minCardsToPlay,
   } = useContext(CardMainContext)
 
   return (

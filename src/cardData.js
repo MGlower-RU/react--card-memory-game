@@ -1,3 +1,4 @@
+// Main images
 import Sushi from './images/japanese_food/sushi.svg'
 import Bento from './images/japanese_food/bento.svg'
 import CakeMochi from './images/japanese_food/cake_mochi.svg'
@@ -21,9 +22,13 @@ import Pills from './images/medical/pills.svg'
 import Stethoscope from './images/medical/stethoscope.svg'
 import Tablets from './images/medical/tablets.svg'
 
+// Backfaces
+import JapanFoodBackface from './images/backfaces/japan.jpg'
+import MedicalBackface from './images/backfaces/medical.jpg'
+
 export const cardsData = {
   'japan-food': {
-    backface: 'img',
+    backface: JapanFoodBackface,
     items: [
       {
         id: 1,
@@ -78,7 +83,7 @@ export const cardsData = {
     ]
   },
   'medical': {
-    backface: 'img',
+    backface: MedicalBackface,
     items: [
       {
         id: 1,
@@ -138,7 +143,7 @@ export const cardsData = {
     ]
   },
   'random-colors': {
-    backface: 'img',
+    backface: randomColor(),
     items: [
       {
         id: 1,
@@ -241,17 +246,7 @@ export const cardsData = {
         img: randomColor()
       },
     ]
-  },
-  'saiki-kusuo': {
-    backface: 'img',
-    items: [
-      {
-        id: 1,
-        name: 'saiki',
-        img: 'green'
-      }
-    ]
-  },
+  }
 }
 
 function randomColor() {

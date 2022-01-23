@@ -9,8 +9,21 @@ export default function Card({name, img}) {
     cardsRevealed,
     setCardsRevealed,
     setAttemptsNumber,
-    setCardsGuessed
+    setCardsGuessed,
+    cardsData,
+    theme
   } = useContext(CardMainContext)
+  const { backface } = cardsData[theme]
+  const backfaceCardStyle = imageCheck(backface) ?
+  {
+    backgroundImage: `url(${backface})`,
+    borderWidth: '5px'
+  }
+  :
+  {
+    backgroundColor: backface,
+    borderWidth: '5px'
+  }
 
   function revealCard(e) {
     const card = e.target.closest('.card')
@@ -44,15 +57,22 @@ export default function Card({name, img}) {
     }
   }
 
+  function imageCheck(img) {
+    return img.indexOf('.png') > 0 || img.indexOf('.svg') > 0 || img.indexOf('.jpg') > 0
+  }
+
   return (
     <div
       className="card"
       onClick={revealCard}
       data-card-name={name}
     >
-      <div className="card__front"></div>
+      <div
+        className="card__front"
+        style={backface ? backfaceCardStyle : null}
+      ></div>
       {
-        (img.indexOf('.png') > 0 || img.indexOf('.svg') > 0 || img.indexOf('.jpg') > 0) ?
+        imageCheck(img) ?
         <div className="card__back">
           <img src={img} alt="" />
         </div>
